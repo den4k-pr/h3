@@ -1,0 +1,137 @@
+
+
+.questions {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: clamp(1.5rem, 1.091rem + 1.924vw, 4.375rem)
+}
+
+.questions .label {
+    align-items: center;
+    background: linear-gradient(150deg, #0b4cb8, #2f7dff);
+    border-radius: 11px;
+    box-shadow: 0 2px 27px 0 rgba(0, 0, 0, .16);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    min-width: 40px
+}
+
+.questions .label .q-arrow {
+    height: 16px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    transition: all .2s;
+    width: 16px
+}
+
+.questions .questionsContainer {
+    justify-content: center;
+    margin: 40px auto;
+    width: 100%
+}
+
+.questions .questionsContainer,
+.questions .questionsContainer-d {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.questions .questionsContainer-item {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 27px 0 rgba(0, 0, 0, .16);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    transition: background-color .3s ease;
+    width: 100%
+}
+
+.questions .questionsContainer-item-top {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0
+}
+
+.questions .questionsContainer-item-bottom {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .4s
+}
+
+.questions .questionsContainer-item.active .questionsContainer-item-bottom {
+    opacity: 1
+}
+
+.questions .question-text {
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    padding: 15px 0;
+    text-transform: none
+}
+
+.questions .question-text,
+.questions .questionsContainer-item-bottom p {
+    font-size: 3.2710280374vw;
+    line-height: 120%
+}
+
+.questions .q-main {
+    padding: 30px 0
+}
+
+.questions .questionsContainer-item-bottom .question-text {
+    padding: 0 0 25px
+}
+
+@media(min-width:900px) {
+
+    .questions .question-text,
+    .questions .questionsContainer-item-bottom p {
+        font-size: 1.3333333333vw
+    }
+
+    .questions {
+        width: 63.3333333333vw
+    }
+
+    .questions .questionsContainer {
+        flex-direction: row;
+        gap: 20px
+    }
+
+    .questions .questionsContainer-d {
+        flex: 50%;
+        gap: 20px
+    }
+
+    .questions .label {
+        border-radius: 13px;
+        height: 50px;
+        min-width: 50px
+    }
+
+    .questions .label .q-arrow {
+        height: 19px;
+        width: 19px
+    }
+
+    .questions .questionsContainer-item-top {
+        min-height: 6.6666666667vw
+    }
+}
