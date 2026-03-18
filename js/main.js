@@ -130,14 +130,38 @@
         const burderButton = document.getElementById("burger-button");
         const burderButtonClose = document.getElementById("burger-close");
         const burgerMenu = document.querySelector(".burger-menu");
-        if (burderButton && burderButtonClose && burgerMenu) {
+        const burgerLinks = document.querySelectorAll(".burger-menu-list-link");
+        if (burderButton && burderButtonClose && burgerMenu && burgerLinks) {
           burderButton.addEventListener("click", () => {
             burgerMenu.classList.add("active");
           });
           burderButtonClose.addEventListener("click", () => {
             burgerMenu.classList.remove("active");
           });
+          burgerLinks.forEach(el => {
+            el.addEventListener("click", () => {
+              burgerMenu.classList.remove("active");
+            });
+          });
         }
+        const navLinks = document.querySelectorAll(".content-navigations-list-link");
+        function updateActiveLink() {
+          let fromTop = window.scrollY + window.innerHeight / 2;
+          navLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute("href"));
+            if (section) {
+              const sectionTop = section.offsetTop;
+              const sectionBottom = sectionTop + section.offsetHeight;
+              if (fromTop >= sectionTop && fromTop < sectionBottom) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            }
+          });
+        }
+        window.addEventListener("scroll", updateActiveLink);
+        updateActiveLink();
         const hoursEl = document.getElementById("header-hours");
         const minEl = document.getElementById("header-min");
         const secEl = document.getElementById("header-sec");
