@@ -46,6 +46,7 @@
         nextEl: ".coments_slider-button-next",
         prevEl: ".coments_slider-button-prev"
       },
+      touchStartPreventDefault: false,
       pagination: {
         el: ".coments_slider-pagination",
         clickable: true

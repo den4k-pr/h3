@@ -40,6 +40,7 @@
       slidesPerView: 2,
       spaceBetween: 20,
       speed: 500,
+      touchStartPreventDefault: false,
       pagination: {
         el: ".modules_component-slider-pagination",
         clickable: true
